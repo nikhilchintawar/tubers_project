@@ -18,14 +18,14 @@ def youtubers_detail(request, id):
 
 def search(request):
     tubers = Youtuber.objects.order_by('-created_date')
-    city_search = Youtuber.objects.all().value_list('city', flat=True).distinct()
-    camera_type_search = Youtuber.objects.all().value_list('camera_type', flat=True).distinct()
-    category_search = Youtuber.objects.all().value_list('category', flat=True).distinct()
+    city_search = Youtuber.objects.values_list('city', flat=True).distinct()
+    camera_type_search = Youtuber.objects.values_list('camera_type', flat=True).distinct()
+    category_search = Youtuber.objects.values_list('category', flat=True).distinct()
 
     if 'keyword' in request.GET:
         keyword = request.GET['keyword']
         if keyword:
-            tubers.filter(description__icontains=keyword)
+            tubers = tubers.filter(description__icontains=keyword)
 
     if 'city' in request.GET:
         city = request.GET['city']

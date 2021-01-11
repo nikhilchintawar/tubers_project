@@ -4,5 +4,5 @@ from . import views
 urlpatterns = [
     path('', views.youtubers, name="youtubers"),
     path('<int:id>', views.youtubers_detail, name="youtubers_detail"),
-    path('', views.search, name="search"),
+    path('search/', views.search, name="search"),
 ]
