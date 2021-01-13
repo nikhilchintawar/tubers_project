@@ -9,6 +9,7 @@ class Contact(models.Model):
     company_name = models.CharField(max_length=100)
     subject = models.CharField(max_length=200)
     message = models.TextField(blank=True)
+    user_id = models.IntegerField(default=0)
     created_date = models.DateTimeField(blank=True, default=datetime.now)
 
     def __str__(self):
