@@ -26,7 +26,7 @@ SECRET_KEY = 'bh%wg2p$eaxk^0)#w%=2q(eyqv-@@1k4yo9)u=4@^=70bd8j7o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'http://127.0.0.1', 'http://127.0.1.7', 'tubers.com']
 
 LOGIN_REDIRECT_URL = 'dashboard'
 # Application definition
@@ -136,7 +136,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'tubers_project/static')
 ]
